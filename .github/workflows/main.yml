@@ -1,16 +1,12 @@
 name: CI
-on:
-workflow_dispatch:
-pull_request:
-push:
-  branches:
-    - main
+on: [push]
 jobs:
-  Install-npm-package:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '16.15.1'
-      - run: npm install
+    - name: Checkout code
+      uses: actions/checkout@v2
+    - name: Install dependencies
+      run: npm ci
+    - name: Lint code
+      run: npm run lint
