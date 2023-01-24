@@ -6,8 +6,7 @@
     "extends": [
         "eslint:recommended",
         "plugin:react/recommended",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:prettier/recommended"
+        "plugin:@typescript-eslint/recommended"
     ],
     "overrides": [
     ],
@@ -23,10 +22,5 @@
     "rules": {
       "semi": ["error", "always"],
       "quotes": ["error", "double"]
-    },
-    "settings": {
-        "react": {
-            "version": "detect"
-        }
     }
 }
