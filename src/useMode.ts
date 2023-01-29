@@ -15,30 +15,36 @@ export const tokens = (mode: string) => ({
   ...(mode === "dark"
     ? {
         blackAccent: {
-          100: "#0f0a09",
-          200: "#736f6e",
+          100: "#1a1918",
+          200: "#090707",
         },
         whiteAccent: {
-          100: "#969696",
-          200: "#e6e1e1",
+          100: "#ffffff",
         },
-        redAccent: {
-          100: "#b3382b",
-          200: "#b81d0d",
+        orangeAccent: {
+          100: "#ac4c2e",
+          200: "#bd533e",
+        },
+        yellowAccent: {
+          100: "#e7c38f",
+          200: "#c99652",
         },
       }
     : {
         blackAccent: {
-          200: "#0f0a09",
-          100: "#736f6e",
+          100: "#090707",
+          200: "#1a1918",
         },
         whiteAccent: {
-          200: "#969696",
-          100: "#e6e1e1",
+          100: "#ffffff",
         },
-        redAccent: {
-          200: "#b3382b",
-          100: "#ff6b5c",
+        orangeAccent: {
+          200: "#ac4c2e",
+          100: "#bd533e",
+        },
+        yellowAccent: {
+          200: "#e7c38f",
+          100: "#c99652",
         },
       }),
 });
@@ -50,15 +56,29 @@ const themeSettings = (mode: string) => {
       ...(mode === "dark"
         ? {
             global: {
-              body: {
+              "html, body": {
                 bg: colors.blackAccent[100],
+                color: colors.whiteAccent[100],
+              },
+              button: {
+                color: colors.whiteAccent[100],
+              },
+              "*": {
+                color: colors.whiteAccent[100],
               },
             },
           }
         : {
             global: {
-              body: {
-                bg: colors.blackAccent[100],
+              "html,body": {
+                bg: colors.whiteAccent[100],
+                color: colors.whiteAccent[100],
+              },
+              button: {
+                color: colors.blackAccent[100],
+              },
+              "*": {
+                color: colors.blackAccent[100],
               },
             },
           }),
