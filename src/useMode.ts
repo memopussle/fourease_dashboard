@@ -19,7 +19,8 @@ export const tokens = (mode: string) => ({
           200: "#090707",
         },
         whiteAccent: {
-          100: "#ffffff",
+          200: "#ffffff",
+          100: "#cccccc",
         },
         orangeAccent: {
           100: "#ac4c2e",
@@ -37,6 +38,7 @@ export const tokens = (mode: string) => ({
         },
         whiteAccent: {
           100: "#ffffff",
+          200: "#cccccc",
         },
         orangeAccent: {
           200: "#ac4c2e",
@@ -65,6 +67,9 @@ const themeSettings = (mode: string) => {
               },
               "*": {
                 color: colors.whiteAccent[100],
+              },
+              "*:focus": {
+                color: colors.whiteAccent[200],
               },
             },
           }

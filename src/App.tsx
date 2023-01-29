@@ -1,8 +1,8 @@
-
 import React from "react";
-import {  ModeContext, useMode} from "./useMode";
-import { ChakraProvider, Grid, GridItem} from "@chakra-ui/react";
-import TopBar from "./scenes/global/TopBar";
+import { ModeContext, useMode } from "./useMode";
+import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
+import TopBar from "./scenes/global/bar/TopBar";
+import SideBar from "./scenes/global/bar/SideBar";
 
 const App = () => {
   const { theme, mode, toggleMode } = useMode();
@@ -15,7 +15,7 @@ const App = () => {
           templateAreas={`"header header"
                   "nav main"
                   "nav footer"`}
-          gridTemplateRows={"1fr 1fr 1fr"}
+          gridTemplateRows={"0.2fr 1fr 1fr"}
           gridTemplateColumns={"0.2fr 1fr"}
           gap="1"
           pl="12"
@@ -25,19 +25,12 @@ const App = () => {
           <GridItem area={"header"}>
             <TopBar />
           </GridItem>
-          <GridItem area={"nav"}>
-            Nav
-          </GridItem>
-          <GridItem area={"main"}>
-            Main
-          </GridItem>
-          <GridItem area={"footer"}>
-            Footer
-          </GridItem>
+          <GridItem area={"nav"}><SideBar /></GridItem>
+          <GridItem area={"main"}>Main</GridItem>
+          <GridItem area={"footer"}>Footer</GridItem>
         </Grid>
       </ChakraProvider>
     </ModeContext.Provider>
   );
 };
 export default App;
-
