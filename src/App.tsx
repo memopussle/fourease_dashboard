@@ -1,19 +1,19 @@
- import {  Button, useColorMode} from "@chakra-ui/react";
+
 import React from "react";
-import { colorPallete } from "./theme";
+import {  ModeContext, useMode} from "./useMode";
+import { ChakraProvider } from "@chakra-ui/react";
+import TopBar from "./scenes/global/TopBar";
 
+const App = () => {
+  const { theme, mode, toggleMode } = useMode();
 
-function App(): JSX.Element {
-  const { colorMode, toggleColorMode } = useColorMode();
-  console.log(colorMode);
   return (
-    <>
-      <Button onClick={toggleColorMode}>
-        {colorMode === "light" ? "light" : "dark"} mode
-      </Button>
-      <h1 style={{ color: colorPallete[colorMode].primary[300] }}>Hello World</h1>
-    </>
+    <ModeContext.Provider value={{ mode, toggleMode }}>
+      <ChakraProvider theme={theme}>
+        <TopBar />
+      </ChakraProvider>
+    </ModeContext.Provider>
   );
-}
+};
 export default App;
 
