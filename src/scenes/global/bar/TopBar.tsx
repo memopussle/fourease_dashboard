@@ -11,24 +11,16 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Text,
-  Avatar
+  Avatar,
+ Box
 } from "@chakra-ui/react";
 
-const Topbar = () => {
+const TopBar = () => {
   const { mode, toggleMode } = useContext(ModeContext);
   const colors = tokens(mode);
   return (
     <>
       <Flex>
-        <Text
-          bgGradient="linear(to-r, #bd533e, #e7c38f)"
-          bgClip="text"
-          fontSize="xl"
-          fontWeight="bold"
-        >
-          WELLEASE
-        </Text>
         <Spacer />
         <ButtonGroup gap="2">
           <Button size="lg" colorScheme="transparent" onClick={toggleMode}>
@@ -44,7 +36,7 @@ const Topbar = () => {
               rightIcon={<ChevronDownIcon />}
               variant="transparent"
             >
-              <Avatar bg={colors.orangeAccent[100]} size="sm" />
+              <Avatar bg={colors.orangeAccent[100]} size="sm" color={{color: colors.whiteAccent[100]}} />
             </MenuButton>
             <MenuList>
               <MenuItem color={colors.blackAccent[100]}>Create a Copy</MenuItem>
@@ -57,4 +49,4 @@ const Topbar = () => {
   );
 };
 
-export default Topbar;
+export default TopBar;
