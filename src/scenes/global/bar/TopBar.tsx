@@ -17,7 +17,7 @@ import {
 
 const TopBar = () => {
   const { mode, toggleMode } = useContext(ModeContext);
-  const colors = tokens(mode);
+  const {colors}= tokens(mode);
   return (
     <>
       <Flex>

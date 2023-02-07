@@ -16,7 +16,7 @@ const App = (): JSX.Element => {
                   "nav dashboard"`}
           gridTemplateRows={"0.1fr 2fr"}
           gridTemplateColumns={"0.2fr 1fr"}
-          gap="12"
+          gap="8"
           pr="8"
         >
           <GridItem area={"header"} pt="4">
