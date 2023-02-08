@@ -11,8 +11,7 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Avatar,
- Box
+  Avatar
 } from "@chakra-ui/react";
 
 const TopBar = () => {

@@ -1,20 +1,30 @@
 import React from "react";
-import {  ModeContext, useMode, SideBarShadow} from "./useMode";
-import { ChakraProvider, Grid, GridItem} from "@chakra-ui/react";
+import { ModeContext, useMode, SideBarShadow } from "./useMode";
+import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
 import { Routes, Route } from "react-router-dom";
-import { Dashboard, CheckIn, Energy, Productivity, Emotion, TopBar, SideBar } from "./scenes/global/links";
-
+import {
+  Dashboard,
+  CheckIn,
+  Energy,
+  Productivity,
+  Emotion,
+  TopBar,
+  SideBar,
+  Chart,
+} from "./scenes/links";
 
 const App = (): JSX.Element => {
-  const { theme, mode, toggleMode,smallDevice } = useMode();
+  const { theme, mode, toggleMode, smallDevice } = useMode();
 
   return (
     <ModeContext.Provider value={{ mode, toggleMode, smallDevice }}>
       <ChakraProvider theme={theme}>
         <Grid
           templateAreas={`"nav header"
-                  "nav dashboard"`}
-          gridTemplateRows={"0.1fr 2fr"}
+                  "nav dashboard"
+                  "nav chart"
+          `}
+          gridTemplateRows={"0.1fr 0.5fr 2fr"}
           gridTemplateColumns={"0.2fr 1fr"}
           gap="8"
           pr="8"
@@ -22,13 +32,7 @@ const App = (): JSX.Element => {
           <GridItem area={"header"} pt="4">
             <TopBar />
           </GridItem>
-          <GridItem
-            area={"nav"}
-            pl="8"
-            pt="4"
-            pr="8"
-            css={SideBarShadow(mode)}
-          >
+          <GridItem area={"nav"} pl="8" pt="4" pr="8" css={SideBarShadow(mode)}>
             <SideBar />
           </GridItem>
           <GridItem area={"dashboard"}>
@@ -41,6 +45,11 @@ const App = (): JSX.Element => {
               <Route path="/wellbeing" element={<Energy />} />
             </Routes>
           </GridItem>
+          <GridItem area={"chart"}>
+            <Routes>
+              <Route path="/" element={<Chart />} />
+              </Routes>
+             </GridItem>
         </Grid>
       </ChakraProvider>
     </ModeContext.Provider>

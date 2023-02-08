@@ -22,11 +22,8 @@ export const SideBarShadow = (mode: "light" | "dark") => css`
     : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
   border-radius: 1.5rem;
   background-image: ${mode === "dark" ? "linear-gradient(80deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))" : ""};
-  height: 100vh;
+  height: auto;
 
-  @media (max-width: 40em) {
-    height: auto;
-  }
 `;
 
 
@@ -53,8 +50,8 @@ export const tokens = (mode: string) => ({
           whiteAccent: {
             100: "#575757",
             200: "#b3b3b3",
+            300: "#e3e1e1",
             400: "#ffffff",
-            300: "#bfbebb",
           },
           grayAccent: {
             100: "#827f7f",
@@ -78,7 +75,7 @@ export const tokens = (mode: string) => ({
             400: "#575757",
             300: "#b3b3b3",
             100: "#ffffff",
-            200: "#bfbebb",
+            200: "#e3e1e1",
           },
 
           orangeAccent: {
@@ -95,32 +92,32 @@ export const tokens = (mode: string) => ({
 
 
 const themeSettings = (mode: string) => {
-  const colors = tokens(mode);
+  const {colors} = tokens(mode);
   return {
     styles: {
       ...(mode === "dark"
         ? {
             global: {
               "html, body": {
-                bg: colors.colors.blackAccent[100],
-                color: colors.colors.whiteAccent[200],
+                bg: colors.blackAccent[100],
+                color: colors.whiteAccent[200],
               },
               "*:focus": {
-                color: colors.colors.whiteAccent[400],
+                color: colors.whiteAccent[400],
               },
             },
           }
         : {
             global: {
               "html,body": {
-                bg: colors.colors.whiteAccent[100],
-                color: colors.colors.whiteAccent[100],
+                bg: colors.whiteAccent[100],
+                color: colors.whiteAccent[100],
               },
               "*:focus": {
                 fontWeight: "bold",
               },
-              "*": {
-                color: colors.colors.blackAccent[100],
+              "p, svg": {
+                color: colors.blackAccent[100],
               },
             },
           }),

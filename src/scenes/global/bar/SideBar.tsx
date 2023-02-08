@@ -21,7 +21,7 @@ const SideBar: React.FC = () => {
           <Text
             bgGradient="linear(to-r, #bd533e, #e7c38f)"
             bgClip="text"
-            fontSize="xl"
+            fontSize="2xl"
             fontWeight="bold"
             pb={24}
           >
