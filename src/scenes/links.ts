@@ -8,7 +8,7 @@ import Energy from "./energy/Energy";
 import Emotion from "./emotion/Emotion";
 import Chart from "./chart/Chart";
 import DashboardItem from "./dashboard/DashboardItem";
-
+import LineChart from "./global/lineChart/LineChart";
 
 export {
   Dashboard,
@@ -20,5 +20,6 @@ export {
   Energy,
   Emotion,
   Chart,
-  DashboardItem
+  DashboardItem,
+  LineChart
 };

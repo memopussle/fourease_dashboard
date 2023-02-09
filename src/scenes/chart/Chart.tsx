@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { CustomBoxShadow, ModeContext } from "../../useMode";
+import { LineChart } from "../links";
 
 
 const Chart = () => {
@@ -17,7 +18,7 @@ const Chart = () => {
           colSpan={smallDevice ? 3 : 2}
           p="8"
         >
-          Chart 1
+          <LineChart />
         </GridItem>
         <GridItem
           rowSpan={15}

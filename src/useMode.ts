@@ -21,17 +21,19 @@ export const SideBarShadow = (mode: "light" | "dark") => css`
     ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
     : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
   border-radius: 1.5rem;
-  background-image: ${mode === "dark" ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))" : ""};
+  background-image: ${mode === "dark"
+    ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
+    : ""};
   height: auto;
-
 `;
 
 
 export const CustomBoxShadow = (mode: "light" | "dark") => css`
   box-shadow: ${mode === "light"
-    ? "-0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
+    ? "-0.2rem 0rem 0.3rem rgba(0, 0, 0, 0.1)"
     : "-1rem 1rem 2rem rgba(0, 0, 0, 0.4)"};
   border-radius: 1.5rem;
+  border:  "1px solid rgba(0, 0, 0, 0.05)";
   background-image: ${mode === "dark" ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))" : "" }
 `;
 
