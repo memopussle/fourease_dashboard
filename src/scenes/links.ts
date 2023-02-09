@@ -7,6 +7,8 @@ import Productivity from "./productivity/Productivity";
 import Energy from "./energy/Energy";
 import Emotion from "./emotion/Emotion";
 import Chart from "./chart/Chart";
+import DashboardItem from "./dashboard/DashboardItem";
+
 
 export {
   Dashboard,
@@ -17,5 +19,6 @@ export {
   Productivity,
   Energy,
   Emotion,
-  Chart
+  Chart,
+  DashboardItem
 };

@@ -21,7 +21,7 @@ export const SideBarShadow = (mode: "light" | "dark") => css`
     ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
     : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
   border-radius: 1.5rem;
-  background-image: ${mode === "dark" ? "linear-gradient(80deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))" : ""};
+  background-image: ${mode === "dark" ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))" : ""};
   height: auto;
 
 `;
@@ -35,7 +35,9 @@ export const CustomBoxShadow = (mode: "light" | "dark") => css`
   background-image: ${mode === "dark" ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))" : "" }
 `;
 
-
+export const subTextStyle = (mode: "light" | "dark",colors: any) => css`
+color: ${mode === "light" ? colors.blackAccent[300] : colors.whiteAccent[100]}
+`;
 
 
 export const tokens = (mode: string) => ({
