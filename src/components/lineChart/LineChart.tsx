@@ -1,8 +1,8 @@
 
 import { ResponsiveLine } from "@nivo/line";
-import { lineData } from "../../../data/lineData";
+import { lineData } from "../../data/lineData";
 import React, { useContext } from "react";
-import { ModeContext } from "../../../useMode";
+import { ModeContext } from "../../useMode";
 
 const LineChart = (): JSX.Element => {
 const { mode } = useContext(ModeContext);
@@ -55,7 +55,7 @@ const { mode } = useContext(ModeContext);
         pointLabelYOffset={-12}
         enableArea={true}
         areaBlendMode={mode === "dark" ? "hard-light": "normal"}
-        areaOpacity={mode === "dark" ? 0.5 : 1}
+        areaOpacity={1}
         useMesh={true}
         legends={[
           {

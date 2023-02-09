@@ -8,7 +8,7 @@ import Energy from "./energy/Energy";
 import Emotion from "./emotion/Emotion";
 import Chart from "./chart/Chart";
 import DashboardItem from "./dashboard/DashboardItem";
-import LineChart from "./global/lineChart/LineChart";
+import LineChart from "../components/lineChart/LineChart";
 
 export {
   Dashboard,
