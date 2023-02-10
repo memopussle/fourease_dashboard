@@ -14,7 +14,7 @@ const SideBar: React.FC = () => {
    const { smallDevice } = useContext(ModeContext);
   return (
     <>
-      <Flex  direction="column">
+      <Flex direction="column" style={{ position: "fixed", top: 0 }} pt="8">
         {smallDevice ? (
           ""
         ) : (

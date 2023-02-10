@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Grid, GridItem } from "@chakra-ui/react";
+import { Grid, GridItem, } from "@chakra-ui/react";
 import { CustomBoxShadow, ModeContext } from "../../useMode";
 import { LineChart } from "../links";
 
@@ -16,7 +16,9 @@ const Chart = () => {
           css={CustomBoxShadow(mode)}
           rowSpan={15}
           colSpan={smallDevice ? 3 : 2}
-          p="8"
+          justifyContent="center"
+          alignContent="center"
+          display="flex"
         >
           <LineChart />
         </GridItem>
@@ -25,9 +27,7 @@ const Chart = () => {
           colSpan={smallDevice ? 3 : 1}
           p="8"
           css={CustomBoxShadow(mode)}
-        >
-          Chart 2
-        </GridItem>
+        ></GridItem>
       </Grid>
     );
 };
