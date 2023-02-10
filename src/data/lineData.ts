@@ -1,7 +1,6 @@
 export const lineData = [
   {
-    id: "germany",
-    color: "#bd533e",
+    id: "Average Score",
     data: [
       {
         x: "Monday",
