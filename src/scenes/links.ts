@@ -9,6 +9,8 @@ import Emotion from "./emotion/Emotion";
 import Chart from "./chart/Chart";
 import DashboardItem from "./dashboard/DashboardItem";
 import LineChart from "../components/lineChart/LineChart";
+import BarChart from "../components/barChart/BarChart";
+import Gradient from "../components/Gradient";
 
 export {
   Dashboard,
@@ -21,5 +23,7 @@ export {
   Emotion,
   Chart,
   DashboardItem,
-  LineChart
+  LineChart,
+  BarChart,
+  Gradient
 };

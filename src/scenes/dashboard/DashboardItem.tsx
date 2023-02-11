@@ -22,7 +22,7 @@ const DashboardItem = ({text, subText, comparison}: Data) => {
             />
           </Box>
           <Spacer />
-                <Text fontSize="sm" css={subTextStyle(mode, colors)} pl="8">
+                <Text fontSize="sm" css={subTextStyle( mode, colors)} pl="8">
             
             {comparison! < 0 ? <ChevronDownIcon /> : <ChevronUpIcon />}
             {comparison}% than yesterday

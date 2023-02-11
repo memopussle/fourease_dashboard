@@ -1,5 +1,5 @@
 import { useState, useMemo, useCallback } from "react";
-import { extendTheme, useMediaQuery} from "@chakra-ui/react";
+import {  extendTheme, useMediaQuery} from "@chakra-ui/react";
 import { createContext } from "react";
 import {css} from "@emotion/react";
 
@@ -28,7 +28,6 @@ export const SideBarShadow = (mode: "light" | "dark") => css`
       ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
       : ""
   };
-
   height: auto;
 `;
 
