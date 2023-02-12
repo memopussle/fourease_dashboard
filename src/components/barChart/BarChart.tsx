@@ -39,12 +39,7 @@ const BarChart = (): JSX.Element => {
           modifiers: [["darker", 0.5]],
         }}
         role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={function (e) {
-          return (
-            e.id + ": " + e.formattedValue + " in country: " + e.indexValue
-          );
-        }}
+        ariaLabel="Bar Chart"
       />
     </>
   );

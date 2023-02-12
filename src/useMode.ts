@@ -7,7 +7,7 @@ import {css} from "@emotion/react";
 export const ModeContext = createContext<{
   mode: "dark" | "light";
   toggleMode: () => void;
-  smallDevice:boolean
+  smallDevice: boolean;
 }>({
   mode: "light",
   // eslint-disable-next-line @typescript-eslint/no-empty-function
@@ -37,8 +37,10 @@ export const CustomBoxShadow = (mode: "light" | "dark") => css`
     ? "-0.2rem 0rem 0.3rem rgba(0, 0, 0, 0.1)"
     : "-1rem 1rem 2rem rgba(0, 0, 0, 0.4)"};
   border-radius: 1.5rem;
-  border:  "1px solid rgba(0, 0, 0, 0.05)";
-  background-image: ${mode === "dark" ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))" : "" }
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-image: ${mode === "dark"
+    ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))"
+    : ""};
 `;
 
 export const subTextStyle = (mode: "light" | "dark", colors: any) => css`
@@ -51,9 +53,10 @@ export const tokens = (mode: string) => ({
     ...(mode === "dark"
       ? {
           blackAccent: {
-            100: "#1a1918",
-            200: "#090707",
-            300: "#000000",
+            100: "#262524",
+            200: "#1a1918",
+            300: "#090707",
+            400: "#000000",
           },
           whiteAccent: {
             100: "#575757",
@@ -65,20 +68,23 @@ export const tokens = (mode: string) => ({
             100: "#827f7f",
           },
           orangeAccent: {
-            100: "#ad4c2e",
-            200: "#ac4c2e",
-            300: "#bd533e",
+            200: "#ad4c2e",
+            300: "#ac4c2e",
+            400: "#bd533e",
+            100: "#ad3611",
           },
           yellowAccent: {
             100: "#e7c38f",
             200: "#c99652",
+            300: "#bf7e28",
           },
         }
       : {
           blackAccent: {
-            100: "#000000",
-            200: "#090707",
+            400: "#262524",
             300: "#1a1918",
+            200: "#090707",
+            100: "#000000",
           },
           whiteAccent: {
             400: "#575757",
@@ -88,13 +94,15 @@ export const tokens = (mode: string) => ({
           },
 
           orangeAccent: {
+            400: "#ad3611",
             300: "#ad4c2e",
             200: "#ac4c2e",
             100: "#bd533e",
           },
           yellowAccent: {
-            200: "#e7c38f",
-            100: "#c99652",
+            300: "#e7c38f",
+            200: "#c99652",
+            100: "#bf7e28",
           },
         }),
   },
@@ -109,7 +117,7 @@ const themeSettings = (mode: string) => {
         ? {
             global: {
               "html, body": {
-                bg: colors.blackAccent[100],
+                bg: colors.blackAccent[200],
                 color: colors.whiteAccent[200],
               },
               "*:focus": {
@@ -145,5 +153,6 @@ export const useMode = () => {
     setMode(mode === "light" ? "dark" : "light");
   }, [mode]);
   const [smallDevice] = useMediaQuery("(max-width: 70rem)");
+
   return { theme, mode, toggleMode, smallDevice};
 };

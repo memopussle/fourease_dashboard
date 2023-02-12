@@ -19,11 +19,13 @@ const DashboardItem = ({text, subText, comparison}: Data) => {
               value={subText}
               bg={colors.whiteAccent[200]}
               mt="8"
+              mb="4"
             />
+            <Text fontSize="xs" css={subTextStyle(mode, colors)}>Your {text} Level</Text>
           </Box>
+
           <Spacer />
-                <Text fontSize="sm" css={subTextStyle( mode, colors)} pl="8">
-            
+          <Text fontSize="xs" css={subTextStyle(mode, colors)} pl="8">
             {comparison! < 0 ? <ChevronDownIcon /> : <ChevronUpIcon />}
             {comparison}% than yesterday
           </Text>

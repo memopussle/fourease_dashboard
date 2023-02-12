@@ -11,7 +11,31 @@ import { Link } from "react-router-dom";
 import { ModeContext } from "../../../useMode";
 
 const SideBar: React.FC = () => {
-   const { smallDevice } = useContext(ModeContext);
+  const { smallDevice } = useContext(ModeContext);
+  const sideBarItems = [
+    { section: "Dashboard", link: "/", icon: <AiFillHome size={20} /> },
+    {
+      section: "Daily check-in",
+      link: "/checkin",
+      icon: <AiOutlineCheckCircle size={20} />,
+    },
+    {
+      section: "Energy",
+      link: "/energy",
+      icon: <SlEnergy size={20} />,
+    },
+    {
+      section: "Emotion",
+      link: "/emotion",
+      icon: <MdOutlineEmojiEmotions size={20} />,
+    },
+    {
+      section: "Exercise",
+      link: "/exercise",
+      icon: <FaWalking size={20} />,
+    },
+    { section: "Eat", link: "/eat", icon: <RiMentalHealthLine size={20} /> },
+  ];
   return (
     <>
       <Flex direction="column" style={{ position: "fixed", top: 0 }} pt="8">
@@ -25,60 +49,21 @@ const SideBar: React.FC = () => {
             fontWeight="bold"
             pb={24}
           >
-            WELLEASE
+            FourEase
           </Text>
         )}
 
         <Box flex={1} display={"block"} pt="4">
-          <Link to="/">
-            <Box display="flex" pb={12}>
-              <AiFillHome size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Dashboard
-              </Text>
-            </Box>
-          </Link>
-          <Link to="/checkin">
-            <Box display="flex" pb={12}>
-              <AiOutlineCheckCircle size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Daily check-in
-              </Text>
-            </Box>
-          </Link>
-          <Link to="/energy">
-            <Box display="flex" pb={12}>
-              <SlEnergy size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Energy
-              </Text>
-            </Box>
-          </Link>
-
-          <Link to="/emotion">
-            <Box display="flex" pb={12}>
-              <MdOutlineEmojiEmotions size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Emotion
-              </Text>
-            </Box>
-          </Link>
-          <Link to="/productivity">
-            <Box display="flex" pb={12}>
-              <FaWalking size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Productivity
-              </Text>
-            </Box>
-          </Link>
-          <Link to="/wellbeing">
-            <Box display="flex" pb={12}>
-              <RiMentalHealthLine size={20} />
-              <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                Well-being
-              </Text>
-            </Box>
-          </Link>
+          {sideBarItems.map((item, i) => (
+            <Link to={item.link} key={i}>
+              <Box display="flex" pb={12}>
+                {item.icon}
+                <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
+                 {item.section}
+                </Text>
+              </Box>
+            </Link>
+          ))}
         </Box>
       </Flex>
     </>

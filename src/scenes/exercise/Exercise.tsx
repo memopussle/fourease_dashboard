@@ -1,9 +1,9 @@
 import React from "react";
 
-const Productivity = () => {
+const Exercise = () => {
   return (
     <div>Productivity</div>
   );
 };
 
-export default Productivity;
+export default Exercise;

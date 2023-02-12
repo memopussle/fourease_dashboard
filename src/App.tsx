@@ -6,15 +6,16 @@ import {
   Dashboard,
   CheckIn,
   Energy,
-  Productivity,
   Emotion,
   TopBar,
   SideBar,
   Chart,
+  Exercise,
+  Eat,
 } from "./scenes/links";
 
 const App = (): JSX.Element => {
-  const { theme, mode, toggleMode, smallDevice } = useMode();
+  const { theme, mode, toggleMode, smallDevice} = useMode();
 
   return (
     <ModeContext.Provider value={{ mode, toggleMode, smallDevice }}>
@@ -24,7 +25,7 @@ const App = (): JSX.Element => {
                   "nav dashboard"
                   "nav chart"
           `}
-          gridTemplateRows={"0.1fr 0.5fr 2fr"}
+          gridTemplateRows={"0.1fr 0.2fr 1fr"}
           gridTemplateColumns={"0.2fr 1fr"}
           gap="8"
           pr="8"
@@ -41,8 +42,8 @@ const App = (): JSX.Element => {
               <Route path="/checkin" element={<CheckIn />} />
               <Route path="/energy" element={<Energy />} />
               <Route path="/emotion" element={<Emotion />} />
-              <Route path="/productivity" element={<Productivity />} />
-              <Route path="/wellbeing" element={<Energy />} />
+              <Route path="/exercise" element={<Exercise />} />
+              <Route path="/eat" element={<Eat />} />
             </Routes>
           </GridItem>
           <GridItem area={"chart"}>

@@ -35,7 +35,7 @@ const TopBar = () => {
               rightIcon={<ChevronDownIcon />}
               variant="transparent"
             >
-              <Avatar bg={colors.orangeAccent[100]} size="sm" color={{color: colors.whiteAccent[100]}} />
+              <Avatar bg={colors.orangeAccent[200]} size="sm" color={{color: colors.whiteAccent[100]}} />
             </MenuButton>
             <MenuList>
               <MenuItem color={colors.blackAccent[100]}>Create a Copy</MenuItem>

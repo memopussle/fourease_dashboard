@@ -4,7 +4,9 @@ import React from "react";
 import { AxisConfig } from "../../Model";
 import Gradient from "../Gradient";
 
+
 const LineChart = (): JSX.Element => {
+
   return (
     <>
       <Gradient />
