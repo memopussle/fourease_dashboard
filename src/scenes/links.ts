@@ -12,7 +12,6 @@ import LineChart from "../components/lineChart/LineChart";
 import BarChart from "../components/barChart/BarChart";
 import Gradient from "../components/Gradient";
 import CalendarChart from "../components/calculatorChart/CalendarChart";
-
 export {
   Dashboard,
   CheckIn,
@@ -27,5 +26,5 @@ export {
   LineChart,
   BarChart,
   Gradient,
-  CalendarChart
+  CalendarChart,
 };
