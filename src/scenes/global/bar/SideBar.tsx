@@ -25,15 +25,16 @@ const SideBar: React.FC = () => {
       icon: <SlEnergy size={20} />,
     },
     {
-      section: "Emotion",
-      link: "/emotion",
-      icon: <MdOutlineEmojiEmotions size={20} />,
-    },
-    {
       section: "Exercise",
       link: "/exercise",
       icon: <FaWalking size={20} />,
     },
+    {
+      section: "Emotion",
+      link: "/emotion",
+      icon: <MdOutlineEmojiEmotions size={20} />,
+    },
+
     { section: "Eat", link: "/eat", icon: <RiMentalHealthLine size={20} /> },
   ];
   return (
