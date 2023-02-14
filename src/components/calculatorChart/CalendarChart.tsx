@@ -14,21 +14,29 @@ const CalendarChart = () => {
       emptyColor={
         mode === "dark" ? colors.blackAccent[100] : colors.whiteAccent[200]
       }
-      colors={[
-        colors.yellowAccent[100],
-        colors.yellowAccent[200],
-        colors.orangeAccent[300],
-        colors.orangeAccent[200],
-        colors.orangeAccent[100],
-      ]}
+      colors={
+        mode === "dark"
+          ? [
+              colors.yellowAccent[100],
+              colors.yellowAccent[300],
+              colors.orangeAccent[400],
+              colors.orangeAccent[100],
+            ]
+          : [
+              colors.yellowAccent[300],
+              colors.yellowAccent[100],
+              colors.orangeAccent[100],
+              colors.orangeAccent[400],
+            ]
+      }
       minValue="auto"
-      margin={{ top: 20, right: 20, bottom: 20, left: 30 }}
+      margin={{ top: 20, right: 30, bottom: 20, left: 60 }}
       yearSpacing={60}
       monthBorderColor={
         mode === "dark" ? colors.blackAccent[200] : colors.whiteAccent[100]
       }
-      dayBorderWidth={1}
-      monthBorderWidth={1}
+      dayBorderWidth={1.5}
+      monthBorderWidth={1.5}
       dayBorderColor={
         mode === "dark" ? colors.blackAccent[200] : colors.whiteAccent[100]
       }

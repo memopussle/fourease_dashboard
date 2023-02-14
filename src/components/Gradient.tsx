@@ -8,7 +8,7 @@ const Gradient = (): JSX.Element => {
         gradientUnits: "userSpaceOnUse",
         x1: "0",
         y1: "0",
-        x2: "0",
+        x2: 50,
         y2: 400,
     };
 
@@ -17,7 +17,14 @@ const Gradient = (): JSX.Element => {
         <defs>
           <linearGradient id="gradient" {...gradProps}>
             <stop offset={"30%"} stopColor={colors.orangeAccent[200]} />
-            <stop offset={"100%"} stopColor={mode === "dark" ? colors.blackAccent[100] : colors.whiteAccent[100]} />
+            <stop
+              offset={"100%"}
+              stopColor={
+                mode === "dark"
+                  ? colors.blackAccent[200]
+                  : colors.whiteAccent[100]
+              }
+            />
           </linearGradient>
         </defs>
       </svg>

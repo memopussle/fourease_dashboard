@@ -3,8 +3,6 @@ import { Grid, GridItem, } from "@chakra-ui/react";
 import { CustomBoxShadow, ModeContext } from "../../useMode";
 import { LineChart, BarChart, CalendarChart } from "../links";
 
-
-
 const Chart = (): JSX.Element => {
     const { smallDevice, mode} = useContext(ModeContext);
     return (
@@ -33,7 +31,6 @@ const Chart = (): JSX.Element => {
           rowSpan={8}
           colSpan={smallDevice ? 6 : 2}
         >
-          Chart 3
         </GridItem>
         <GridItem
           css={CustomBoxShadow(mode)}
