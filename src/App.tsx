@@ -15,16 +15,23 @@ import {
 } from "./scenes/links";
 
 const App = (): JSX.Element => {
-  const { theme, mode, toggleMode, smallDevice} = useMode();
-
+  const { theme, mode, toggleMode, smallDevice } = useMode();
+  const path = [
+    { path: "/", section: <Dashboard /> },
+    { path: "/checkin", section: <CheckIn /> },
+    { path: "/energy", section: <Energy /> },
+    { path: "/emotion", section: <Emotion /> },
+    { path: "/exercise", section: <Exercise /> },
+    { path: "/eat", section: <Eat /> },
+  ];
   return (
     <ModeContext.Provider value={{ mode, toggleMode, smallDevice }}>
       <ChakraProvider theme={theme}>
         <Grid
           templateAreas={`"nav header"
-                  "nav dashboard"
-                  "nav chart"
-          `}
+                          "nav dashboard"
+                          "nav chart"
+                    `}
           gridTemplateRows={"0.1fr 0.2fr 1fr"}
           gridTemplateColumns={"0.2fr 1fr"}
           gap="8"
@@ -38,19 +45,16 @@ const App = (): JSX.Element => {
           </GridItem>
           <GridItem area={"dashboard"}>
             <Routes>
-              <Route path="/" element={<Dashboard />} />
-              <Route path="/checkin" element={<CheckIn />} />
-              <Route path="/energy" element={<Energy />} />
-              <Route path="/emotion" element={<Emotion />} />
-              <Route path="/exercise" element={<Exercise />} />
-              <Route path="/eat" element={<Eat />} />
+              {path.map(({ path, section }, i) => (
+                <Route key={i} path={path} element={section} />
+              ))}
             </Routes>
           </GridItem>
           <GridItem area={"chart"}>
             <Routes>
               <Route path="/" element={<Chart />} />
-              </Routes>
-             </GridItem>
+            </Routes>
+          </GridItem>
         </Grid>
       </ChakraProvider>
     </ModeContext.Provider>

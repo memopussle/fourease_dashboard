@@ -11,12 +11,12 @@ import {
   MenuButton,
   MenuList,
   MenuItem,
-  Avatar
+  Avatar,
 } from "@chakra-ui/react";
 
 const TopBar = () => {
   const { mode, toggleMode } = useContext(ModeContext);
-  const {colors}= tokens(mode);
+  const { colors } = tokens(mode);
   return (
     <>
       <Flex>
@@ -35,7 +35,11 @@ const TopBar = () => {
               rightIcon={<ChevronDownIcon />}
               variant="transparent"
             >
-              <Avatar bg={colors.orangeAccent[200]} size="sm" color={{color: colors.whiteAccent[100]}} />
+              <Avatar
+                bg={colors.orangeAccent[200]}
+                size="sm"
+                color={{ color: colors.whiteAccent[100] }}
+              />
             </MenuButton>
             <MenuList>
               <MenuItem color={colors.blackAccent[100]}>Create a Copy</MenuItem>

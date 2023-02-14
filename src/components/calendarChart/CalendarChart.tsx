@@ -4,8 +4,8 @@ import { calendarData } from "../../data/calendarData";
 import { ModeContext, tokens } from "../../useMode";
 
 const CalendarChart = () => {
-   const { mode } = useContext(ModeContext);
-   const { colors } = tokens(mode);
+  const { mode } = useContext(ModeContext);
+  const { colors } = tokens(mode);
   return (
     <ResponsiveCalendar
       data={calendarData}
