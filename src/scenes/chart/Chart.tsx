@@ -1,14 +1,14 @@
 import React, { useContext } from "react";
 import { Grid, GridItem, } from "@chakra-ui/react";
 import { CustomBoxShadow, ModeContext } from "../../useMode";
-import { LineChart, BarChart, CalendarChart } from "../links";
+import { LineChart, BarChart, CalendarChart, PieChart } from "../links";
 
 const Chart = (): JSX.Element => {
     const { smallDevice, mode} = useContext(ModeContext);
     return (
       <Grid
         gap={8}
-        templateRows="repeat(23,1fr)"
+        templateRows="repeat(30,1fr)"
         templateColumns="repeat(6, 1fr)"
       >
         <GridItem
@@ -28,9 +28,10 @@ const Chart = (): JSX.Element => {
         </GridItem>
         <GridItem
           css={CustomBoxShadow(mode)}
-          rowSpan={8}
+          rowSpan={15}
           colSpan={smallDevice ? 6 : 2}
         >
+          <PieChart />
         </GridItem>
         <GridItem
           css={CustomBoxShadow(mode)}

@@ -30,7 +30,7 @@ const CalendarChart = () => {
             ]
       }
       minValue="auto"
-      margin={{ top: 20, right: 30, bottom: 20, left: 60 }}
+      margin={{ top: 30, right: 30, bottom: 30, left: 60 }}
       yearSpacing={60}
       monthBorderColor={
         mode === "dark" ? colors.blackAccent[200] : colors.whiteAccent[100]
