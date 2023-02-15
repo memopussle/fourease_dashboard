@@ -48,7 +48,7 @@ const SideBar: React.FC = () => {
             fontWeight="bold"
             pb={24}
           >
-            FourEase
+            Four Ease
           </Text>
         )}
 
