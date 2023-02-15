@@ -28,5 +28,5 @@ export {
   BarChart,
   Gradient,
   CalendarChart,
-  PieChart
+  PieChart,
 };

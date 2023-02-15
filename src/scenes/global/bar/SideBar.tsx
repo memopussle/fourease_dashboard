@@ -1,6 +1,4 @@
-import {
-  Box,Flex, Text,
-} from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import React, { useContext } from "react";
 import { AiFillHome, AiOutlineCheckCircle } from "react-icons/ai";
 import { SlEnergy } from "react-icons/sl";
@@ -60,7 +58,7 @@ const SideBar: React.FC = () => {
               <Box display="flex" pb={12}>
                 {item.icon}
                 <Text display={smallDevice ? "none" : "inline-block"} ml={2}>
-                 {item.section}
+                  {item.section}
                 </Text>
               </Box>
             </Link>

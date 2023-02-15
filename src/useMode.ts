@@ -1,8 +1,7 @@
 import { useState, useMemo, useCallback } from "react";
-import {  extendTheme, useMediaQuery} from "@chakra-ui/react";
+import { extendTheme, useMediaQuery } from "@chakra-ui/react";
 import { createContext } from "react";
-import {css} from "@emotion/react";
-
+import { css } from "@emotion/react";
 
 export const ModeContext = createContext<{
   mode: "dark" | "light";
@@ -11,26 +10,20 @@ export const ModeContext = createContext<{
 }>({
   mode: "light",
   // eslint-disable-next-line @typescript-eslint/no-empty-function
-  toggleMode: () => { },
-  smallDevice: false
+  toggleMode: () => {},
+  smallDevice: false,
 });
 
-
 export const SideBarShadow = (mode: "light" | "dark") => css`
-  box-shadow: ${
-    mode === "light"
-      ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
-      : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"
-  };
+  box-shadow: ${mode === "light"
+    ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
+    : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
   border-radius: 1.5rem;
-  background-image: ${
-    mode === "dark"
-      ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
-      : ""
-  };
+  background-image: ${mode === "dark"
+    ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
+    : ""};
   height: auto;
 `;
-
 
 export const CustomBoxShadow = (mode: "light" | "dark") => css`
   box-shadow: ${mode === "light"
@@ -44,9 +37,10 @@ export const CustomBoxShadow = (mode: "light" | "dark") => css`
 `;
 
 export const subTextStyle = (mode: "light" | "dark", colors: any) => css`
-color: ${mode === "light" ? colors.blackAccent[300] : colors.whiteAccent[100]}
+  color: ${mode === "light"
+    ? colors.blackAccent[300]
+    : colors.whiteAccent[100]};
 `;
-
 
 export const tokens = (mode: string) => ({
   colors: {
@@ -108,9 +102,8 @@ export const tokens = (mode: string) => ({
   },
 });
 
-
 const themeSettings = (mode: string) => {
-  const {colors} = tokens(mode);
+  const { colors } = tokens(mode);
   return {
     styles: {
       ...(mode === "dark"
@@ -143,7 +136,6 @@ const themeSettings = (mode: string) => {
   };
 };
 
-
 export const useMode = () => {
   const [mode, setMode] = useState<"dark" | "light">("dark");
   const themeSettingsResult = themeSettings(mode);
@@ -154,5 +146,5 @@ export const useMode = () => {
   }, [mode]);
   const [smallDevice] = useMediaQuery("(max-width: 70rem)");
 
-  return { theme, mode, toggleMode, smallDevice};
+  return { theme, mode, toggleMode, smallDevice };
 };

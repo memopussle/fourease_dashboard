@@ -1,7 +1,7 @@
 export interface Data {
   text: string;
-    subText: number;
-    comparison: number | undefined;
+  subText: number;
+  comparison: number | undefined;
 }
 
 export type AxisConfig = {
