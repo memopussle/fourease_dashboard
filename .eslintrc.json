@@ -23,8 +23,7 @@
     ],
     "rules": {
       "semi": ["error", "always"],
-      "quotes": ["error", "double"],
-      "prettier/prettier": "error"
+      "quotes": ["error", "double"]
     },
     "settings": {
         "react": {

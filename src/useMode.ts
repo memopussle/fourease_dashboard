@@ -139,7 +139,6 @@ const themeSettings = (mode: string) => {
 export const useMode = () => {
   const [mode, setMode] = useState<"dark" | "light">("dark");
   const themeSettingsResult = themeSettings(mode);
-
   const theme = useMemo(() => extendTheme(themeSettingsResult), [mode]);
   const toggleMode = useCallback(() => {
     setMode(mode === "light" ? "dark" : "light");

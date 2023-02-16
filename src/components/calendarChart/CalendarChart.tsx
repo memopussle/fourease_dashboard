@@ -10,7 +10,7 @@ const CalendarChart = () => {
     <ResponsiveCalendar
       data={calendarData}
       from="2023-03-01"
-      to="2023-07-12"
+      to="2023-12-31"
       emptyColor={
         mode === "dark" ? colors.blackAccent[100] : colors.whiteAccent[200]
       }
