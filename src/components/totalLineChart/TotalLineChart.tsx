@@ -1,10 +1,10 @@
 import { ResponsiveLine } from "@nivo/line";
-import { lineData } from "../../data/lineData";
+import { lineData } from "../../data/totalLineData";
 import React from "react";
 import { AxisConfig } from "../../Model";
 import Gradient from "../Gradient";
 
-const LineChart = (): JSX.Element => {
+const TotalLineChart = (): JSX.Element => {
   return (
     <>
       <Gradient />
@@ -56,4 +56,4 @@ const LineChart = (): JSX.Element => {
   );
 };
 
-export default LineChart;
+export default TotalLineChart;

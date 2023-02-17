@@ -1,7 +1,14 @@
 import React, { useContext } from "react";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { CustomBoxShadow, ModeContext } from "../../useMode";
-import { LineChart, BarChart, CalendarChart, PieChart } from "../links";
+import {
+  TotalLineChart,
+  BarChart,
+  CalendarChart,
+  PieChart,
+  HalfCalendarChart,
+  EatLineChart,
+} from "../links";
 
 const Chart = (): JSX.Element => {
   const { smallDevice, mode } = useContext(ModeContext);
@@ -16,7 +23,7 @@ const Chart = (): JSX.Element => {
         rowSpan={15}
         colSpan={smallDevice ? 6 : 4}
       >
-        <LineChart />
+        <TotalLineChart />
       </GridItem>
       <GridItem
         rowSpan={15}
@@ -28,7 +35,7 @@ const Chart = (): JSX.Element => {
       </GridItem>
       <GridItem
         css={CustomBoxShadow(mode)}
-        rowSpan={15}
+        rowSpan={16}
         colSpan={smallDevice ? 6 : 2}
       >
         <PieChart />
@@ -38,7 +45,14 @@ const Chart = (): JSX.Element => {
         rowSpan={8}
         colSpan={smallDevice ? 6 : 4}
       >
-        <CalendarChart />
+        {smallDevice ? <HalfCalendarChart /> : <CalendarChart />}
+      </GridItem>
+      <GridItem
+        css={CustomBoxShadow(mode)}
+        rowSpan={8}
+        colSpan={smallDevice ? 6 : 4}
+      >
+        <EatLineChart />
       </GridItem>
     </Grid>
   );

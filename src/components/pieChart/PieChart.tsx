@@ -10,18 +10,17 @@ const PieChart = (): JSX.Element => {
     <>
       <ResponsivePie
         data={pieData}
-        margin={{ top: 60, right: 40, bottom: 60, left: 40 }}
+        margin={{ top: 60, right: 80, bottom: 60, left: 80 }}
         innerRadius={0.5}
         padAngle={1}
         cornerRadius={3}
         activeOuterRadiusOffset={8}
         colors={[
           colors.yellowAccent[200],
-          colors.yellowAccent[100],
-          colors.orangeAccent[400],
-          colors.orangeAccent[300],
-          colors.orangeAccent[200],
           colors.orangeAccent[100],
+          colors.orangeAccent[200],
+          colors.orangeAccent[300],
+          colors.orangeAccent[400],
         ]}
         borderWidth={0}
         borderColor={{
