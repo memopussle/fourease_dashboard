@@ -12,7 +12,7 @@ const BarChart = (): JSX.Element => {
         keys={["energy"]}
         indexBy="date"
         margin={{ top: 20, right: 10, bottom: 20, left: 45 }}
-        padding={0.3}
+        padding={0.5}
         valueScale={{ type: "linear" }}
         indexScale={{ type: "band", round: true }}
         colors={["url(#gradient)"]}
