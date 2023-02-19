@@ -22,14 +22,14 @@
         "prettier"
     ],
     "rules": {
-      "semi": ["error", "always"],
-      "quotes": ["error", "double"],
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto"
-        }
-      ]
+        "semi": ["error", "always"],
+        "quotes": ["error", "double"],
+        "prettier/prettier": [
+            "error",
+            {
+            "endOfLine": "auto"
+            }
+        ]
     },
     "settings": {
         "react": {
