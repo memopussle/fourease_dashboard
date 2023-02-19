@@ -1,16 +1,16 @@
-import React, { useContext } from "react";
-import { ResponsiveCalendar } from "@nivo/calendar";
+import { ResponsiveTimeRange } from "@nivo/calendar";
 import { calendarData } from "../../data/calendarData";
+import React, { useContext } from "react";
 import { ModeContext, tokens } from "../../useMode";
 
-const CalendarChart = (): JSX.Element => {
+const HalfCalendarChart = () => {
   const { mode } = useContext(ModeContext);
   const { colors } = tokens(mode);
   return (
-    <ResponsiveCalendar
+    <ResponsiveTimeRange
       data={calendarData}
-      from="2023-03-01"
-      to="2023-12-31"
+      from="2023-01-01"
+      to="2023-07-1"
       emptyColor={
         mode === "dark" ? colors.blackAccent[100] : colors.whiteAccent[200]
       }
@@ -29,13 +29,8 @@ const CalendarChart = (): JSX.Element => {
               colors.orangeAccent[400],
             ]
       }
-      minValue="auto"
-      margin={{ top: 30, right: 30, bottom: 30, left: 60 }}
-      monthBorderColor={
-        mode === "dark" ? colors.blackAccent[200] : colors.whiteAccent[100]
-      }
+      margin={{ top: 40, right: 20, bottom: 40, left: 60 }}
       dayBorderWidth={1.5}
-      monthBorderWidth={1.5}
       dayBorderColor={
         mode === "dark" ? colors.blackAccent[200] : colors.whiteAccent[100]
       }
@@ -55,4 +50,4 @@ const CalendarChart = (): JSX.Element => {
   );
 };
 
-export default CalendarChart;
+export default HalfCalendarChart;

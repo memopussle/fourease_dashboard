@@ -8,11 +8,13 @@ import Energy from "./energy/Energy";
 import Emotion from "./emotion/Emotion";
 import Chart from "./chart/Chart";
 import DashboardItem from "./dashboard/DashboardItem";
-import LineChart from "../components/lineChart/LineChart";
+import TotalLineChart from "../components/totalLineChart/TotalLineChart";
 import BarChart from "../components/barChart/BarChart";
 import Gradient from "../components/Gradient";
 import CalendarChart from "../components/calendarChart/CalendarChart";
 import PieChart from "../components/pieChart/PieChart";
+import HalfCalendarChart from "../components/halfCalendarChart/HalfCalendarChart";
+import EatLineChart from "../components/eatLineChart/EatLineChart";
 export {
   Dashboard,
   CheckIn,
@@ -24,9 +26,11 @@ export {
   Emotion,
   Chart,
   DashboardItem,
-  LineChart,
+  TotalLineChart,
   BarChart,
   Gradient,
   CalendarChart,
   PieChart,
+  HalfCalendarChart,
+  EatLineChart,
 };
