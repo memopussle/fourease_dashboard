@@ -29,6 +29,7 @@
     "react-icons": "^4.7.1",
     "react-router": "^6.8.0",
     "react-scripts": "5.0.1",
+    "ts-node-dev": "^2.0.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,8 +37,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "dev": "ts-node backend/server.ts",
-    "lint": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test}/**/*.ts\"   --fix"
+    "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
+    "lint": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix"
   },
   "eslintConfig": {
     "extends": [
