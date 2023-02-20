@@ -39,7 +39,7 @@
     "eject": "react-scripts eject",
     "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
     "start:dev": "concurrently \"npm run dev\" \"npm start\"",
-    "lint:js": "eslint \"{src,apps,libs,test,backend}/**/*.js\"  \"{src,apps,libs,test,backend}/*.js\" --fix",
+    "lint:js": "eslint \"backend/**/*.js\"  \"backend/*.js\" --fix",
     "lint:ts": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix",
     "lint:fix": "concurrently \"npm:lint:*(!fix)\""
   },
