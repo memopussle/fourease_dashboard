@@ -43,9 +43,10 @@ const TopBar = () => {
               />
             </MenuButton>
             <MenuList>
-
               {/* To Do - change to logout if already logged in*/}
-              <MenuItem color={colors.blackAccent[100]}><Link to ={`/SignIn`}>Log In</Link></MenuItem> 
+              <MenuItem color={colors.blackAccent[100]}>
+                <Link to={"/SignIn"}>Log In</Link>
+              </MenuItem>
 
               <MenuItem color={colors.blackAccent[100]}>Create a Copy</MenuItem>
               <MenuItem color={colors.blackAccent[100]}>Mark as Draft</MenuItem>
