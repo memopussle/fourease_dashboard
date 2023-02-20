@@ -33,12 +33,15 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
-    "lint": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix"
+    "start:dev": "concurrently \"npm run dev\" \"npm start\"",
+    "lint:js": "eslint \"backend/**/*.js\"  \"backend/*.js\" --fix",
+    "lint:ts": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix",
+    "lint:fix": "concurrently \"npm:lint:*(!fix)\""
   },
   "eslintConfig": {
     "extends": [
@@ -62,6 +65,7 @@
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
+    "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-config-standard-with-typescript": "^31.0.0",
