@@ -33,13 +33,14 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-scripts start --host 0.0.0.0",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
     "start:dev": "concurrently \"npm run dev\" \"npm start\"",
-    "lint": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix"
+    "lint:js": "eslint \"{src,apps,libs,test,backend}/**/*.js\"  \"{src,apps,libs,test,backend}/*.js\" --fix",
+    "lint:ts": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix"
   },
   "eslintConfig": {
     "extends": [
