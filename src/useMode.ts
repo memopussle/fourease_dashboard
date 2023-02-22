@@ -2,9 +2,10 @@ import { useState, useMemo, useCallback } from "react";
 import { extendTheme, useMediaQuery } from "@chakra-ui/react";
 import { createContext } from "react";
 import { css } from "@emotion/react";
+import { Colors, Mode } from "./Model";
 
 export const ModeContext = createContext<{
-  mode: "dark" | "light";
+  mode: Mode;
   toggleMode: () => void;
   smallDevice: boolean;
 }>({
@@ -14,7 +15,7 @@ export const ModeContext = createContext<{
   smallDevice: false,
 });
 
-export const SideBarShadow = (mode: "light" | "dark") => css`
+export const SideBarShadow = (mode: Mode) => css`
   box-shadow: ${mode === "light"
     ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
     : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
@@ -25,7 +26,7 @@ export const SideBarShadow = (mode: "light" | "dark") => css`
   height: auto;
 `;
 
-export const CustomBoxShadow = (mode: "light" | "dark") => css`
+export const CustomBoxShadow = (mode: Mode) => css`
   box-shadow: ${mode === "light"
     ? "-0.2rem 0rem 0.3rem rgba(0, 0, 0, 0.1)"
     : "-1rem 1rem 2rem rgba(0, 0, 0, 0.4)"};
@@ -36,7 +37,7 @@ export const CustomBoxShadow = (mode: "light" | "dark") => css`
     : ""};
 `;
 
-export const subTextStyle = (mode: "light" | "dark", colors: any) => css`
+export const subTextStyle = (mode: Mode, colors: Colors) => css`
   color: ${mode === "light"
     ? colors.blackAccent[300]
     : colors.whiteAccent[100]};
@@ -102,7 +103,7 @@ export const tokens = (mode: string) => ({
   },
 });
 
-const themeSettings = (mode: string) => {
+const themeSettings = (mode: Mode) => {
   const { colors } = tokens(mode);
   return {
     styles: {
@@ -137,7 +138,7 @@ const themeSettings = (mode: string) => {
 };
 
 export const useMode = () => {
-  const [mode, setMode] = useState<"dark" | "light">("dark");
+  const [mode, setMode] = useState<Mode>("dark");
   const themeSettingsResult = themeSettings(mode);
   const theme = useMemo(() => extendTheme(themeSettingsResult), [mode]);
   const toggleMode = useCallback(() => {

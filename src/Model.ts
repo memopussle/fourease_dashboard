@@ -12,3 +12,18 @@ export type AxisConfig = {
   legendOffset: number;
   legendPosition: "middle";
 };
+
+export type Mode = "dark" | "light";
+
+type ColorHues = {
+  100?: string;
+  200?: string;
+  300?: string;
+  400?: string;
+  500?: string;
+};
+
+export type Colors = {
+  blackAccent: ColorHues;
+  whiteAccent: ColorHues;
+};
