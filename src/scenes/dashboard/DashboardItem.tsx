@@ -22,7 +22,11 @@ const DashboardItem = ({ text, subText, comparison }: Data) => {
             colorScheme="orange"
             size="sm"
             value={subText}
-            bg={colors.whiteAccent[200]}
+            bg={
+              mode === "dark"
+                ? colors.blackAccent[100]
+                : colors.whiteAccent[200]
+            }
             mt="8"
             mb="4"
           />

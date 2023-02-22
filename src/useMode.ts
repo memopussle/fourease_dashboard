@@ -15,40 +15,12 @@ export const ModeContext = createContext<{
   smallDevice: false,
 });
 
-export const SideBarShadow = (mode: Mode) => css`
-  box-shadow: ${mode === "light"
-    ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
-    : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
-  border-radius: 1.5rem;
-  background-image: ${mode === "dark"
-    ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
-    : ""};
-  height: auto;
-`;
-
-export const CustomBoxShadow = (mode: Mode) => css`
-  box-shadow: ${mode === "light"
-    ? "-0.2rem 0rem 0.3rem rgba(0, 0, 0, 0.1)"
-    : "-1rem 1rem 2rem rgba(0, 0, 0, 0.4)"};
-  border-radius: 1.5rem;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-  background-image: ${mode === "dark"
-    ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))"
-    : ""};
-`;
-
-export const subTextStyle = (mode: Mode, colors: Colors) => css`
-  color: ${mode === "light"
-    ? colors.blackAccent[300]
-    : colors.whiteAccent[100]};
-`;
-
 export const tokens = (mode: string) => ({
   colors: {
     ...(mode === "dark"
       ? {
           blackAccent: {
-            100: "#262524",
+            100: "#1f1e1d",
             200: "#1a1918",
             300: "#090707",
             400: "#000000",
@@ -56,7 +28,7 @@ export const tokens = (mode: string) => ({
           whiteAccent: {
             100: "#575757",
             200: "#b3b3b3",
-            300: "#e3e1e1",
+            300: "#f1f0f0",
             400: "#ffffff",
           },
           grayAccent: {
@@ -76,7 +48,7 @@ export const tokens = (mode: string) => ({
         }
       : {
           blackAccent: {
-            400: "#262524",
+            400: "#1f1e1d",
             300: "#1a1918",
             200: "#090707",
             100: "#000000",
@@ -85,7 +57,7 @@ export const tokens = (mode: string) => ({
             400: "#575757",
             300: "#b3b3b3",
             100: "#ffffff",
-            200: "#e3e1e1",
+            200: "#f1f0f0",
           },
 
           orangeAccent: {
@@ -102,6 +74,35 @@ export const tokens = (mode: string) => ({
         }),
   },
 });
+
+export const SideBarShadow = (mode: Mode) =>
+  css`
+    box-shadow: ${mode === "light"
+      ? "0.2rem 0.5rem 0.5rem rgba(0, 0, 0, 0.06)"
+      : "1rem 1rem 1rem rgba(0, 0, 0, 0.09)"};
+    border-radius: 1.5rem;
+    background-image: ${mode === "dark"
+      ? "linear-gradient(100deg,rgba(0, 0, 0, 0.06),rgba(25, 25, 25))"
+      : ""};
+    height: auto;
+  `;
+
+export const CustomBoxShadow = (mode: Mode) => css`
+  box-shadow: ${mode === "light"
+    ? "-0.2rem 0rem 0.3rem rgba(0, 0, 0, 0.1)"
+    : "-1rem 1rem 2rem rgba(0, 0, 0, 0.4)"};
+  border-radius: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  background-image: ${mode === "dark"
+    ? "linear-gradient(10deg,rgba(0, 0, 0, 0.06),rgba(25,25,25))"
+    : ""};
+`;
+
+export const subTextStyle = (mode: Mode, colors: Colors) => css`
+  color: ${mode === "light"
+    ? colors.blackAccent[300]
+    : colors.whiteAccent[100]};
+`;
 
 const themeSettings = (mode: Mode) => {
   const { colors } = tokens(mode);
