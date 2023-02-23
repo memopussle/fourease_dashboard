@@ -4,7 +4,7 @@ import app from "./app";
 
 const server = http.createServer(app);
 
-const PORT = process.env.PORT || 8080;
+const PORT = 8080;
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Okay!!!");
