@@ -1,12 +1,13 @@
 version: '3'
 
 services:
-  backend:
-    build: .
+  backend: 
+    build: ./backend
     ports:
       - 8090:8080
     volumes:
-      - .:/usr/src/app
+      - ./backend:/usr/src/app
+      - /app/node_modules
     command: npm run dev
   client:
     build: ./client
