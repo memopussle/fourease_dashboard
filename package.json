@@ -42,7 +42,6 @@
     "eject": "react-scripts eject",
     "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
     "start:dev": "concurrently \"npm run dev\" \"npm start\"",
-    "lint:js": "eslint \"backend/**/*.js\"  \"backend/*.js\" --fix",
     "lint:ts": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix",
     "lint:fix": "concurrently \"npm:lint:*(!fix)\""
   },
@@ -68,7 +67,6 @@
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
-    "bcrypt": "^5.1.0",
     "concurrently": "^7.6.0",
     "eslint": "^8.32.0",
     "eslint-config-prettier": "^8.6.0",
