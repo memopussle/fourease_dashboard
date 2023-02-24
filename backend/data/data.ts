@@ -1,23 +1,15 @@
-import bcrypt from "bcryptjs";
-
-const data = {
+const mockData = {
   //test users
 
   users: [
     {
-      name: "ExampleAdmin",
-      email: "testemail@admin.com",
-      password: bcrypt.hashSync("123456"),
-      isAdmin: true,
-    },
-    {
-      name: "ExampleUser",
-      email: "testemail@user.com",
-      password: bcrypt.hashSync("123456"),
-      isAdmin: false,
+      first_name: "Thu",
+      last_name: "Giang",
+      email: "oke@gmail.com",
+      password: "12345",
     },
   ],
 };
 
 //exports data so App.ts can render it
-export default data;
+export default mockData;
