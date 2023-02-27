@@ -17,7 +17,6 @@
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/bcryptjs": "^2.4.2",
     "@types/jest": "^27.5.2",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
@@ -25,7 +24,6 @@
     "dotenv": "^16.0.3",
     "eslint-plugin-standard": "^5.0.0",
     "framer-motion": "^8.5.4",
-    "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -42,7 +40,8 @@
     "eject": "react-scripts eject",
     "dev": "ts-node-dev --poll --respawn --transpile-only ./backend/server.ts",
     "start:dev": "concurrently \"npm run dev\" \"npm start\"",
-    "lint:ts": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\"  \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\"   --fix",
+    "lint:ts": "eslint \"{src,apps,libs,test,backend}/**/*.ts\"  \"{src,apps,libs,test,backend}/*.ts\" --fix",
+    "lint:tsx": "eslint \"{src,apps,libs,test}/*.tsx\" \"{src,apps,libs,test}/***/**/*.tsx\" \"{src,apps,libs,test}/**/*.tsx\" --fix",
     "lint:fix": "concurrently \"npm:lint:*(!fix)\""
   },
   "eslintConfig": {
@@ -64,6 +63,8 @@
     ]
   },
   "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/jsonwebtoken": "^9.0.1",
     "@types/node": "^18.14.0",
     "@typescript-eslint/eslint-plugin": "^5.48.2",
     "@typescript-eslint/parser": "^5.48.2",
@@ -76,6 +77,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.32.1",
+    "jsonwebtoken": "^9.0.0",
     "prettier": "2.8.4",
     "react-router-dom": "^6.8.0",
     "ts-node": "^10.9.1",
