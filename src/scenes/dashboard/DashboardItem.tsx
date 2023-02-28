@@ -8,8 +8,9 @@ import {
 import { ChevronUpIcon, ChevronDownIcon } from "@chakra-ui/icons";
 import React, { useContext } from "react";
 import { Data } from "../../Model";
+import { Link } from "react-router-dom";
 
-const DashboardItem = ({ text, subText, comparison }: Data) => {
+const DashboardItem = ({ text, subText, comparison, link }: Data) => {
   const { mode } = useContext(ModeContext);
   const { colors } = tokens(mode);
 
@@ -31,7 +32,7 @@ const DashboardItem = ({ text, subText, comparison }: Data) => {
             mb="4"
           />
           <Text fontSize="xs" css={subTextStyle(mode, colors)}>
-            Your {text} Level
+            <Link to={link}>See more details</Link>
           </Text>
         </Box>
 

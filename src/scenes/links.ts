@@ -15,6 +15,7 @@ import CalendarChart from "../components/calendarChart/CalendarChart";
 import PieChart from "../components/pieChart/PieChart";
 import HalfCalendarChart from "../components/halfCalendarChart/HalfCalendarChart";
 import EatLineChart from "../components/eatLineChart/EatLineChart";
+import LogIn from "./login/LogIn";
 export {
   Dashboard,
   CheckIn,
@@ -33,4 +34,5 @@ export {
   PieChart,
   HalfCalendarChart,
   EatLineChart,
+  LogIn,
 };

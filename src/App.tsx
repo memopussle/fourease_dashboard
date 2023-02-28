@@ -1,7 +1,7 @@
 import React from "react";
 import { ModeContext, useMode, SideBarShadow } from "./useMode";
 import { ChakraProvider, Grid, GridItem } from "@chakra-ui/react";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import {
   Dashboard,
   CheckIn,
@@ -12,9 +12,11 @@ import {
   Chart,
   Exercise,
   Eat,
+  LogIn,
 } from "./scenes/links";
 
 const App = (): JSX.Element => {
+  const location = useLocation();
   const { theme, mode, toggleMode, smallDevice } = useMode();
   const path = [
     { path: "/", section: <Dashboard /> },
@@ -39,9 +41,22 @@ const App = (): JSX.Element => {
         >
           <GridItem area={"header"} pt="4">
             <TopBar />
+            <Routes>
+              <Route path="/user/login" element={<LogIn />} />
+            </Routes>
           </GridItem>
           <GridItem area={"nav"} pl="8" pt="4" pr="8" css={SideBarShadow(mode)}>
-            <SideBar />
+            {location.pathname !== "/user/login" && (
+              <GridItem
+                area={"nav"}
+                pl="8"
+                pt="4"
+                pr="8"
+                css={SideBarShadow(mode)}
+              >
+                <SideBar />
+              </GridItem>
+            )}
           </GridItem>
           <GridItem area={"dashboard"}>
             <Routes>
