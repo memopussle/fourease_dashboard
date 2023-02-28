@@ -50,6 +50,7 @@ export const register = async (req: Request, res: Response) => {
 
     // return new user
     res.status(201).json(user);
+    console.log(res);
   } catch (error) {
     console.log(error);
   }
