@@ -9,15 +9,11 @@ const verifyToken = async (
   next: NextFunction
 ) => {
   const authHeader = req.headers["authorization"];
-  const token =
-    req.body.token ||
-    req.query.token ||
-    req.headers["x-access-token"] ||
-    (authHeader && authHeader.split(" ")[1]);
+  const token = authHeader && authHeader.split(" ")[1];
 
   // if no token is found
   if (!token) {
-    return res.status(403).send("A token is required for authentication");
+    return res.status(401).send("Unauthorized");
   }
 
   try {
@@ -31,15 +27,14 @@ const verifyToken = async (
     });
 
     if (!user) {
-      throw new Error("User cannot find!!");
+      throw new Error("User cannot be found!");
     }
 
     // set user info exp, data, expiration from decoded JWT
     req.user = decoded as AuthenticatedRequest["user"];
-    console.log(req.user);
-    next();
+    return next();
   } catch (err) {
-    return res.status(401).send("Invalid Token");
+    return res.status(403).send("Invalid Token");
   }
 };
 

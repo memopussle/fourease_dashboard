@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import { Schema, model } from "mongoose";
 
-const dashboardSchema = new mongoose.Schema(
+const dashboardSchema = new Schema(
   {
     energy_level: { type: Number, default: null, required: true },
     exercise_level: { type: Number, default: null, required: true },
@@ -14,5 +14,5 @@ const dashboardSchema = new mongoose.Schema(
   }
 );
 
-const Dashboard = mongoose.model("Dashboard", dashboardSchema);
+const Dashboard = model("Dashboard", dashboardSchema);
 export default Dashboard;
