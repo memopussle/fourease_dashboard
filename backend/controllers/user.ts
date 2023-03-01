@@ -38,7 +38,7 @@ export const register = async (req: Request, res: Response) => {
     // create jwt token
     const token = jwt.sign(
       {
-        exp: Math.floor(Date.now() / 1000) + 60 * 60, // expires in 1 hour
+        exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 5, // expires in 5 days
         data: { user_id: user._id, email },
       },
       process.env.TOKEN_KEY as string
@@ -50,6 +50,7 @@ export const register = async (req: Request, res: Response) => {
 
     // return new user
     res.status(201).json(user);
+    console.log(res);
   } catch (error) {
     console.log(error);
   }
@@ -72,7 +73,7 @@ export const login = async (req: Request, res: Response) => {
       // resign token incase it's expired
       const token = jwt.sign(
         {
-          exp: Math.floor(Date.now() / 1000) + 60 * 60, // expires in 1 hour
+          exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 5,
           data: { user_id: user._id, email },
         },
         process.env.TOKEN_KEY as string

@@ -2,6 +2,7 @@ export interface Data {
   text: string;
   subText: number;
   comparison: number;
+  link: string;
 }
 
 export type AxisConfig = {

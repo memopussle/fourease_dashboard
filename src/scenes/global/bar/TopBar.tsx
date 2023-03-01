@@ -43,12 +43,15 @@ const TopBar = () => {
               />
             </MenuButton>
             <MenuList>
+              <Link to="/">
+                <MenuItem color={colors.blackAccent[100]}>Home</MenuItem>
+              </Link>
               {/* To Do - change to logout if already logged in*/}
-              <MenuItem color={colors.blackAccent[100]}>
-                <Link to={"/SignIn"}>Log In</Link>
-              </MenuItem>
+              <Link to="/user/login">
+                <MenuItem color={colors.blackAccent[100]}>Log In</MenuItem>
+              </Link>
 
-              <MenuItem color={colors.blackAccent[100]}>Create a Copy</MenuItem>
+              <MenuItem color={colors.blackAccent[100]}>Register</MenuItem>
               <MenuItem color={colors.blackAccent[100]}>Mark as Draft</MenuItem>
             </MenuList>
           </Menu>

@@ -10,3 +10,20 @@ export interface AuthenticatedRequest extends Request {
     iat: number;
   };
 }
+
+export interface User {
+  first_name: string;
+  last_name: string;
+  email: string;
+  password: string;
+  token: string;
+}
+
+export interface Dashboard {
+  user_id: string;
+  energy_level: number;
+  exercise_level: number;
+  emotion_level: number;
+  eat_level: number;
+  average_score: number;
+}
