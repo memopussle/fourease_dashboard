@@ -20,7 +20,7 @@ export interface User {
 }
 
 export interface Dashboard {
-  user_id: string;
+  user: string;
   energy_level: number;
   exercise_level: number;
   emotion_level: number;
