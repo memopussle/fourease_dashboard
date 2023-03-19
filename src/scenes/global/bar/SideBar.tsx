@@ -38,9 +38,7 @@ const SideBar: React.FC = () => {
   return (
     <>
       <Flex direction="column" style={{ position: "fixed", top: 0 }} pt="8">
-        {smallDevice ? (
-          ""
-        ) : (
+        {!smallDevice && (
           <Text
             bgGradient="linear(to-r, #bd533e, #e7c38f)"
             bgClip="text"

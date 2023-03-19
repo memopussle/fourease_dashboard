@@ -45,19 +45,17 @@ const App = (): JSX.Element => {
               <Route path="/user/login" element={<LogIn />} />
             </Routes>
           </GridItem>
-          <GridItem area={"nav"} pl="8" pt="4" pr="8" css={SideBarShadow(mode)}>
-            {location.pathname !== "/user/login" && (
-              <GridItem
-                area={"nav"}
-                pl="8"
-                pt="4"
-                pr="8"
-                css={SideBarShadow(mode)}
-              >
-                <SideBar />
-              </GridItem>
-            )}
-          </GridItem>
+          {location.pathname !== "/user/login" && (
+            <GridItem
+              area={"nav"}
+              pl="8"
+              pt="4"
+              pr="8"
+              css={SideBarShadow(mode)}
+            >
+              <SideBar />
+            </GridItem>
+          )}
           <GridItem area={"dashboard"}>
             <Routes>
               {path.map(({ path, section }, i) => (
