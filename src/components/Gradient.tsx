@@ -6,10 +6,10 @@ const Gradient = (): JSX.Element => {
   const { colors } = tokens(mode);
   const gradProps = {
     gradientUnits: "userSpaceOnUse",
-    x1: 40,
-    y1: 0,
+    x1: -10,
+    y1: 50,
     x2: 50,
-    y2: 350,
+    y2: 400,
   };
 
   return (

@@ -2,7 +2,7 @@ export const pieData = [
   {
     id: "Mon",
     label: "Mon",
-    value: 3,
+    value: 8,
   },
   {
     id: "Tues",
@@ -17,7 +17,7 @@ export const pieData = [
   {
     id: "Thurs",
     label: "Thurs",
-    value: 4,
+    value: 7,
   },
   {
     id: "Fri",

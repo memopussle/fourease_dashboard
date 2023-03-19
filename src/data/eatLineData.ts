@@ -8,27 +8,27 @@ export const eatLineData = [
       },
       {
         x: "Tuesday",
-        y: 3,
+        y: 6,
       },
       {
         x: "Wednesday",
-        y: 5,
+        y: 8.7,
       },
       {
         x: "Thursday",
-        y: 4,
+        y: 2.4,
       },
       {
         x: "Friday",
-        y: 3,
+        y: 2,
       },
       {
         x: "Saturday",
-        y: 5,
+        y: 9.2,
       },
       {
         x: "Sunday",
-        y: 1,
+        y: 8.5,
       },
     ],
   },
