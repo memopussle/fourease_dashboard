@@ -1,12 +1,10 @@
 import express from "express";
-import { createDashboard, updateDashboardItem } from "../controllers/dashboard";
+import { createDashboard } from "../controllers/dashboard";
 import verifyToken from "../middleware/auth";
 
 const router = express.Router();
 
-// create data for the new data
+// create data for the user
 router.post("/", verifyToken, createDashboard);
-// update the data item
-router.put("/:itemId", verifyToken, updateDashboardItem);
 
 export default router;
