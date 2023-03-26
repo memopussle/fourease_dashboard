@@ -10,10 +10,9 @@ import {
   Menu,
   MenuButton,
   MenuList,
-  MenuItem,
   Avatar,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import DropdownItem from "./DropdownItem";
 
 const TopBar = () => {
   const { mode, toggleMode } = useContext(ModeContext);
@@ -43,16 +42,21 @@ const TopBar = () => {
               />
             </MenuButton>
             <MenuList>
-              <Link to="/">
-                <MenuItem color={colors.blackAccent[100]}>Home</MenuItem>
-              </Link>
-              {/* To Do - change to logout if already logged in*/}
-              <Link to="/user/login">
-                <MenuItem color={colors.blackAccent[100]}>Log In</MenuItem>
-              </Link>
-
-              <MenuItem color={colors.blackAccent[100]}>Register</MenuItem>
-              <MenuItem color={colors.blackAccent[100]}>Mark as Draft</MenuItem>
+              <DropdownItem
+                link="/"
+                color={colors.blackAccent[100]}
+                content="Home"
+              />
+              <DropdownItem
+                link="/user/login"
+                color={colors.blackAccent[100]}
+                content="Log In"
+              />
+              <DropdownItem
+                link="/checkin"
+                color={colors.blackAccent[100]}
+                content="Daily Check-in"
+              />
             </MenuList>
           </Menu>
         </ButtonGroup>

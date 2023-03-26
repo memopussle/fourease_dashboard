@@ -1,18 +1,18 @@
 export const calendarData = [
   {
-    value: 10,
+    value: 5,
     day: "2023-01-11",
   },
   {
-    value: 9,
+    value: 4,
     day: "2023-01-02",
   },
   {
-    value: 7,
+    value: 3,
     day: "2023-01-03",
   },
   {
-    value: 4,
+    value: 2,
     day: "2023-01-04",
   },
   {
@@ -20,27 +20,27 @@ export const calendarData = [
     day: "2023-01-05",
   },
   {
-    value: 2,
+    value: 1,
     day: "2023-01-06",
   },
   {
-    value: 0,
+    value: 1,
     day: "2023-01-07",
   },
   {
-    value: 7,
+    value: 1,
     day: "2023-01-08",
   },
   {
-    value: 10,
+    value: 5,
     day: "2023-01-09",
   },
   {
-    value: 1,
+    value: 3,
     day: "2023-01-10",
   },
   {
-    value: 1,
+    value: 4,
     day: "2023-01-11",
   },
   {
@@ -52,11 +52,11 @@ export const calendarData = [
     day: "2023-11-20",
   },
   {
-    value: 8,
+    value: 1,
     day: "2023-12-20",
   },
   {
-    value: 1,
+    value: 3,
     day: "2023-08-20",
   },
 ];

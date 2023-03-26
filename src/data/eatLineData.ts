@@ -3,32 +3,32 @@ export const eatLineData = [
     id: "Healthy Diet Level",
     data: [
       {
-        x: "Monday",
+        x: "Mon",
         y: 1,
       },
       {
-        x: "Tuesday",
-        y: 6,
+        x: "Tues",
+        y: 3,
       },
       {
-        x: "Wednesday",
-        y: 8.7,
+        x: "Wed",
+        y: 4,
       },
       {
-        x: "Thursday",
-        y: 2.4,
-      },
-      {
-        x: "Friday",
+        x: "Thurs",
         y: 2,
       },
       {
-        x: "Saturday",
-        y: 9.2,
+        x: "Fri",
+        y: 1,
       },
       {
-        x: "Sunday",
-        y: 8.5,
+        x: "Sat",
+        y: 5,
+      },
+      {
+        x: "Sun",
+        y: 4,
       },
     ],
   },

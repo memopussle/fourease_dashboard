@@ -16,6 +16,7 @@ import PieChart from "../components/pieChart/PieChart";
 import HalfCalendarChart from "../components/halfCalendarChart/HalfCalendarChart";
 import EatLineChart from "../components/eatLineChart/EatLineChart";
 import LogIn from "./login/LogIn";
+import DropdownItem from "./global/bar/DropdownItem";
 export {
   Dashboard,
   CheckIn,
@@ -35,4 +36,5 @@ export {
   HalfCalendarChart,
   EatLineChart,
   LogIn,
+  DropdownItem,
 };

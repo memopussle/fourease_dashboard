@@ -5,26 +5,26 @@ export const barData = [
   },
   {
     date: "Tues",
-    energy: 6,
+    energy: 1,
   },
   {
     date: "Wed",
-    energy: 9,
+    energy: 2,
   },
   {
     date: "Thurs",
-    energy: 10,
+    energy: 3,
   },
   {
     date: "Fri",
-    energy: 9,
+    energy: 4,
   },
   {
     date: "Sat",
-    energy: 7,
+    energy: 1,
   },
   {
     date: "Sun",
-    energy: 9,
+    energy: 1,
   },
 ];

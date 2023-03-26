@@ -4,27 +4,27 @@ export const lineData = [
     data: [
       {
         x: "Monday",
-        y: 0,
+        y: 1,
       },
       {
         x: "Tuesday",
-        y: 7,
+        y: 2,
       },
       {
         x: "Wednesday",
-        y: 4,
+        y: 1,
       },
       {
         x: "Thursday",
-        y: 3,
+        y: 2,
       },
       {
         x: "Friday",
-        y: 9,
+        y: 2,
       },
       {
         x: "Saturday",
-        y: 10,
+        y: 5,
       },
       {
         x: "Sunday",

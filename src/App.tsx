@@ -29,23 +29,25 @@ const App = (): JSX.Element => {
   return (
     <ModeContext.Provider value={{ mode, toggleMode, smallDevice }}>
       <ChakraProvider theme={theme}>
-        <Grid
-          templateAreas={`"nav header"
+        {location.pathname === "/user/login" ? (
+          <Routes>
+            <Route path="/user/login" element={<LogIn />} />
+          </Routes>
+        ) : (
+          <Grid
+            templateAreas={`"nav header"
                           "nav dashboard"
                           "nav chart"
                     `}
-          gridTemplateRows={"0.1fr 0.2fr 1fr"}
-          gridTemplateColumns={"0.2fr 1fr"}
-          gap="8"
-          pr="8"
-        >
-          <GridItem area={"header"} pt="4">
-            <TopBar />
-            <Routes>
-              <Route path="/user/login" element={<LogIn />} />
-            </Routes>
-          </GridItem>
-          {location.pathname !== "/user/login" && (
+            gridTemplateRows={"0.1fr 0.2fr 1fr"}
+            gridTemplateColumns={"0.2fr 1fr"}
+            gap="8"
+            pr="8"
+          >
+            <GridItem area={"header"} pt="4">
+              <TopBar />
+            </GridItem>
+
             <GridItem
               area={"nav"}
               pl="8"
@@ -55,20 +57,20 @@ const App = (): JSX.Element => {
             >
               <SideBar />
             </GridItem>
-          )}
-          <GridItem area={"dashboard"}>
-            <Routes>
-              {path.map(({ path, section }, i) => (
-                <Route key={i} path={path} element={section} />
-              ))}
-            </Routes>
-          </GridItem>
-          <GridItem area={"chart"}>
-            <Routes>
-              <Route path="/" element={<Chart />} />
-            </Routes>
-          </GridItem>
-        </Grid>
+            <GridItem area={"dashboard"}>
+              <Routes>
+                {path.map(({ path, section }, i) => (
+                  <Route key={i} path={path} element={section} />
+                ))}
+              </Routes>
+            </GridItem>
+            <GridItem area={"chart"}>
+              <Routes>
+                <Route path="/" element={<Chart />} />
+              </Routes>
+            </GridItem>
+          </Grid>
+        )}
       </ChakraProvider>
     </ModeContext.Provider>
   );
