@@ -9,7 +9,6 @@ import {
   Emotion,
   TopBar,
   SideBar,
-  Chart,
   Exercise,
   Eat,
   LogIn,
@@ -37,9 +36,8 @@ const App = (): JSX.Element => {
           <Grid
             templateAreas={`"nav header"
                           "nav dashboard"
-                          "nav chart"
                     `}
-            gridTemplateRows={"0.1fr 0.2fr 1fr"}
+            gridTemplateRows={"0.1fr 1fr"}
             gridTemplateColumns={"0.2fr 1fr"}
             gap="8"
             pr="8"
@@ -62,11 +60,6 @@ const App = (): JSX.Element => {
                 {path.map(({ path, section }, i) => (
                   <Route key={i} path={path} element={section} />
                 ))}
-              </Routes>
-            </GridItem>
-            <GridItem area={"chart"}>
-              <Routes>
-                <Route path="/" element={<Chart />} />
               </Routes>
             </GridItem>
           </Grid>

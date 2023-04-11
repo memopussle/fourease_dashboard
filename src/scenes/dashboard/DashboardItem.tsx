@@ -15,7 +15,7 @@ const DashboardItem = ({ text, subText, comparison, link }: Data) => {
   const { colors } = tokens(mode);
 
   return (
-    <GridItem h="48" css={CustomBoxShadow(mode)} p="8">
+    <GridItem h="48" css={CustomBoxShadow(mode)} p="8" w="100%">
       <Flex>
         <Box w="60">
           <Text fontSize="2xl">{text}</Text>

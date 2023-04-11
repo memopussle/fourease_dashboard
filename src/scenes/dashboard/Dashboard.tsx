@@ -1,6 +1,6 @@
 import React from "react";
 import { SimpleGrid } from "@chakra-ui/react";
-import { DashboardItem } from "../links";
+import { DashboardItem, Chart } from "../links";
 
 const Dashboard = () => {
   const titleArray = [
@@ -11,17 +11,20 @@ const Dashboard = () => {
   ];
 
   return (
-    <SimpleGrid columns={[1, 1, 2, 2, 4]} gap={8}>
-      {titleArray.map(({ title, data, comparison, link }, i) => (
-        <DashboardItem
-          key={i}
-          text={title}
-          subText={data}
-          comparison={comparison}
-          link={link}
-        />
-      ))}
-    </SimpleGrid>
+    <>
+      <SimpleGrid columns={[1, 1, 2, 2, 4]} gap={8} mb="8">
+        {titleArray.map(({ title, data, comparison, link }, i) => (
+          <DashboardItem
+            key={i}
+            text={title}
+            subText={data}
+            comparison={comparison}
+            link={link}
+          />
+        ))}
+      </SimpleGrid>
+      <Chart />
+    </>
   );
 };
 
